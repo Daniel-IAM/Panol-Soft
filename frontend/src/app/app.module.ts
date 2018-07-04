@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 //componentes
 import { AppComponent } from './app.component';
 import { MaterialesComponent } from './components/materiales/materiales.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MaterialesComponent
+    MaterialesComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
