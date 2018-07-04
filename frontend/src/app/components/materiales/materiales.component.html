@@ -1,0 +1,36 @@
+<div class ="container">
+  <div class = "row">
+    <div class = "col s5">
+      <div class = "card">
+        <div class = "card-content">
+          <form #MaterialesForm = "ngForm" (ngSubmit)='AddMaterial(MaterialesForm)'>
+          <!--  <input type="hidden" name="_id" #name="ngModel" [(ngModel)]="materialesService.selectedMaterial._id"> -->
+            <div class = "row">
+              <div class = "input-field col-s12">
+                <input type="text" name= "Nombre" #name="ngModel" 
+                [(ngModel)]="materialesService.selectedMaterial.Nombre" placeholder="Ingresa tu nombre">
+              </div>
+              <div class = "input-field col-s12">
+                <input type= "text" name= "Cantidad" #name="ngModel" 
+                [(ngModel)]="materialesService.selectedMaterial.Cantidad" placeholder="Ingresa la cantidad">
+              </div>
+              <div class = "input-field col-s12">
+                <input type= "text" name= "Estado" #name="ngModel" 
+                [(ngModel)]="materialesService.selectedMaterial.Estado" placeholder="Ingresa su estado">
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(MaterialesForm)">Clean</button>
+                  <button class="btn right">Save</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class = "col-s7">
+     
+    </div>
+  </div>
+</div>
