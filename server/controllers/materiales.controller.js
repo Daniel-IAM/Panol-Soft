@@ -10,7 +10,11 @@ MaterialesCtrl.getMateriales = async (req, res) =>{
 
 //Crear material
 MaterialesCtrl.createMaterial = async (req, res) =>{
-    const Materiales = new Material(req.body);
+    const Materiales = new Material({
+        nombre: req.body.nombre,
+        cantidad: req.body.cantidad,
+        estado: req.body.estado
+    });
     await Materiales.save();
     res.json({
         'Status':'Material saved'

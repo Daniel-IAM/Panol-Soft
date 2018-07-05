@@ -21,36 +21,36 @@ export class MaterialesComponent implements OnInit {
   }
 
   AddMaterial(form?: NgForm) {
-    console.log(form.value);
+ //   console.log(form.value);
     if(form.value._id) {
        this.materialesService.PutMaterial(form.value)
         .subscribe( res => {
           console.log(res);
           this.resetForm(form);
           this.GetMateriales();
-          M.toast({html: 'Updated Successfully'});
+          M.toast({html: 'Update successfully'});
         });
-    }// else {
-     // this.materialesService.PostMateriales(form.value)
-     // .subscribe(res => {
-     //   console.log(res);
-     //   this.GetMateriales();
-     //   this.resetForm(form);
-     //   M.toast({html: 'Save successfully'});
-     // });
-   // }
+    } else {
+      this.materialesService.PostMateriales(form.value)
+      .subscribe(res => {
+        console.log(res);
+        this.GetMateriales();
+        this.resetForm(form);
+        M.toast({html: 'Save successfully'});
+      });
+    }
     
   }
 
   GetMateriales() {
     this.materialesService.GetMateriales()
       .subscribe(res => {
-        this.materialesService.Materiales = res as Materiales[];
+        this.materialesService.materiales = res as Materiales[];
       });
   }
 
-  EditarMaterial(Material: Materiales) {
-    this.materialesService.selectedMaterial = Material;
+  EditarMaterial(material: Materiales) {
+    this.materialesService.selectedMaterial = material;
   }
 
   DeleteMaterial(_id: string, form: NgForm) {

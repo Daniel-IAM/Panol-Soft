@@ -11,7 +11,7 @@ import { Materiales } from '../models/materiales';
 export class MaterialesService {
 
   selectedMaterial: Materiales;
-  Materiales : Materiales [];
+  materiales : Materiales [];
   readonly URL_API = 'http://localhost:3000/api/materiales';
   
   constructor(private http :HttpClient) {
@@ -22,15 +22,15 @@ export class MaterialesService {
     return this.http.get(this.URL_API);
   }
 
-  PostMateriales(Materiales : Materiales) {
-    return this.http.post(this.URL_API, Materiales);
+  PostMateriales(materiales : Materiales) {
+    return this.http.post(this.URL_API, materiales);
   }
 
   PutMaterial(materiales : Materiales) {
-    return this.http.put(this.URL_API + '/${materiales._id}', materiales);
+    return this.http.put(this.URL_API + `/${materiales._id}`, materiales);
   }
 
   DeleteMaterial (_id : string) {
-    return this.http.delete(this.URL_API + '/${_id}');
+    return this.http.delete(this.URL_API + `/${_id}`);
   }
 }
