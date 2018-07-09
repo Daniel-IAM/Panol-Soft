@@ -68,6 +68,7 @@ export class MaterialesComponent implements OnInit {
     if (form) {
       form.reset();
       this.materialesService.selectedMaterial = new Materiales();
+      this.GetMateriales();
    }
   }
 }

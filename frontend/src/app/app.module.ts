@@ -3,18 +3,21 @@ import { NgModule } from '@angular/core';
 //Permite trabajar con formularios ingresar datos, obtener datos, etc
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {AppRoutingModule, routingComponents} from './app-routing.module';
 //componentes
 import { AppComponent } from './app.component';
-import { MaterialesComponent } from './components/materiales/materiales.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MaterialesComponent
+    UsuariosComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],
